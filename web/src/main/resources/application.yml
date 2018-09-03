@@ -27,19 +27,19 @@ spring:
       password: gg123
       host: 193.112.111.196
       port: 27017
-
-mongodb:
-  mmProperties:
-      database: mm
-      username: mm
-      password: mm123
-      host: 193.112.111.196
-      port: 27017
-  ggProperties:
-      database: gg
-      username: gg
-      password: gg123
-      host: 193.112.111.196
-      port: 27017
+#mongo多数据源配置
+#mongodb:
+#  mmProperties:
+#      database: mm
+#      username: mm
+#      password: mm123
+#      host: 193.112.111.196
+#      port: 27017
+#  ggProperties:
+#      database: gg
+#      username: gg
+#      password: gg123
+#      host: 193.112.111.196
+#      port: 27017
 mybatis:
   mapper-locations: classpath:mapper/*.xml
