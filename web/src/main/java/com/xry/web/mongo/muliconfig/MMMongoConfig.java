@@ -8,5 +8,5 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "com.xry.repo.mongo.repo.mmdb",
         mongoTemplateRef = MMMongoConfig.MONGO_TEMPLATE)
 public class MMMongoConfig {
-    protected static final String MONGO_TEMPLATE = "mmMongoTemplate";
+    public static final String MONGO_TEMPLATE = "mmMongoTemplate";
 }

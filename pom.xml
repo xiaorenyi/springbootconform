@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.1.RELEASE</version>
+        <version>2.0.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -27,10 +27,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
-        <conform.job.version>0.0.1-SNAPSHOT</conform.job.version>
-        <conform.repo.version>0.0.1-SNAPSHOT</conform.repo.version>
-        <conform.web.version>0.0.1-SNAPSHOT</conform.web.version>
-        <conform.common.version>0.0.1-SNAPSHOT</conform.common.version>
         <druid.version>1.0.29</druid.version>
         <fastjson.version>1.2.39</fastjson.version>
         <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
@@ -102,22 +98,22 @@
             <dependency>
                 <groupId>com.xry</groupId>
                 <artifactId>conform-job</artifactId>
-                <version>${conform.job.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.xry</groupId>
                 <artifactId>conform-repo</artifactId>
-                <version>${conform.repo.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.xry</groupId>
                 <artifactId>conform-web</artifactId>
-                <version>${conform.web.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.xry</groupId>
                 <artifactId>conform-common</artifactId>
-                <version>${conform.common.version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
