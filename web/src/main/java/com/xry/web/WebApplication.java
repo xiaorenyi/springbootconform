@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @SpringBootApplication
 @ComponentScan(value = {"com.xry.web","com.xry.repo"})
 @MapperScan(value = "com.xry.repo.mybatis.mapper")
-//启用多数据源，这里就不要添加@EnableMongoRepositories
+//启用多数据源，这里就不要启用@EnableMongoRepositories注解
 @EnableMongoRepositories(basePackages = "com.xry.repo.mongo")
 public class WebApplication {
 
