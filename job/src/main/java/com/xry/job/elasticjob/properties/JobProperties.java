@@ -16,4 +16,6 @@ public class JobProperties {
     private JobCronProperties jobCrones;
     @NestedConfigurationProperty
     private JobNameProperties jobNames;
+
+    private String test;
 }
