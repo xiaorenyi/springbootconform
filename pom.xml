@@ -32,6 +32,8 @@
         <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
         <mybatis.version>1.3.2</mybatis.version>
         <httpclient.version>4.5.5</httpclient.version>
+        <elastic.job.version>2.1.5</elastic.job.version>
+        <elastic.job.spring.version>1.0.1</elastic.job.spring.version>
     </properties>
 
     <dependencies>
@@ -92,6 +94,23 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!--当当定时任务 elastic job -->
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-lite-core</artifactId>
+                <version>${elastic.job.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-lite-lifecycle</artifactId>
+                <version>${elastic.job.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-spring</artifactId>
+                <version>${elastic.job.spring.version}</version>
             </dependency>
 
             <!--  项目内依赖版本-->

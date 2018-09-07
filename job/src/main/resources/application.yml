@@ -18,3 +18,16 @@ spring:
     port: 5672
     username: root
     password: root
+
+setting:
+  elastic:
+    zookeeper:
+      server-list: 193.112.111.196:2181
+      namespace: xry_job
+      max-retries: 3
+
+job:
+  jobCrones:
+    sycnDataCron: 10 * * * * ?
+  jobNames:
+    sycnData: sycn_data
