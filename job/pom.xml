@@ -28,6 +28,7 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
+		<!--当当定时任务 -->
 		<dependency>
 			<groupId>com.dangdang</groupId>
 			<artifactId>elastic-job-lite-core</artifactId>
@@ -39,6 +40,18 @@
 		<dependency>
 			<groupId>com.dangdang</groupId>
 			<artifactId>elastic-job-spring</artifactId>
+		</dependency>
+		<!-- 連接zookeeper的客戶端-->
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-client</artifactId>
+			<version>2.11.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 	</dependencies>
