@@ -71,6 +71,10 @@ public class ElasticJobServiceImpl implements ElasticJobService {
                 jobScheduler = new JobScheduler(registryCenter, createJobConfiguration(jobPacket), elasticJobListeners);
             }
             jobScheduler.init();
+            /**
+             * 不要手动registerStartUpInfo方法，否则在控制台触发时，定时任务会执行2次
+             */
+//            jobScheduler.getSchedulerFacade().registerStartUpInfo(true);
         }
     }
 
