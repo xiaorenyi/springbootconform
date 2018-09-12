@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: conform-web
+logging:
+  path: logs/
+  file: logs/${spring.application.name}.log

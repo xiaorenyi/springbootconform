@@ -17,11 +17,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- kafka消息队列 -->
+
+		<!--consul or eureka做服务，服务之间用feign调用 -->
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency>
+		<!-- kafka消息队列 -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.kafka</groupId>-->
+			<!--<artifactId>spring-kafka</artifactId>-->
+		<!--</dependency>-->
 		<!-- rabbitmq 消息队列-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +55,12 @@
 		<dependency>
 			<groupId>com.dangdang</groupId>
 			<artifactId>elastic-job-spring</artifactId>
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>com.dangdang</groupId>-->
+					<!--<artifactId>elastic-job-core</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		</dependency>
 	</dependencies>
 

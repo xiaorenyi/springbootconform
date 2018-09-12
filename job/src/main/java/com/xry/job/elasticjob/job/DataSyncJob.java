@@ -3,14 +3,13 @@ package com.xry.job.elasticjob.job;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 import lombok.extern.slf4j.Slf4j;
-import org.quartz.DisallowConcurrentExecution;
 
 /**
  * @author yuqinggen
  * @create 2018-09-07 16:16
  */
 @Slf4j
-@DisallowConcurrentExecution
+//@DisallowConcurrentExecution
 public class DataSyncJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
