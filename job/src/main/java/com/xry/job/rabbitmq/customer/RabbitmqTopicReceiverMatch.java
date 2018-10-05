@@ -18,4 +18,6 @@ public class RabbitmqTopicReceiverMatch {
     public void process(MsgBean msg) {
         System.out.println("Receiver match : " + msg);
     }
+
+
 }

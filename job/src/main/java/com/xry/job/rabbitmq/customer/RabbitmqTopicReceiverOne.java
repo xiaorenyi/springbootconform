@@ -1,5 +1,6 @@
 package com.xry.job.rabbitmq.customer;
 
+
 import com.xry.job.rabbitmq.MsgBean;
 import com.xry.job.rabbitmq.config.TopicRabbitmqConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

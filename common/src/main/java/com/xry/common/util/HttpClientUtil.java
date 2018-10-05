@@ -75,12 +75,15 @@ public class HttpClientUtil {
         log.info("get请求，请求的url = {}", url);
         log.info("请求参数 paramMap = {}", paramMap);
 
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet();
-        List<NameValuePair> formParams = setHttpParams(paramMap);
-        String param = URLEncodedUtils.format(formParams, "UTF-8");
-        httpGet.setURI(URI.create(url + "?" + param));
-        CloseableHttpResponse response = httpClient.execute(httpGet);
+        HttpGet httpGet;
+        CloseableHttpResponse response;
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            httpGet = new HttpGet();
+            List<NameValuePair> formParams = setHttpParams(paramMap);
+            String param = URLEncodedUtils.format(formParams, "UTF-8");
+            httpGet.setURI(URI.create(url + "?" + param));
+            response = httpClient.execute(httpGet);
+        }
         String httpEntityContent = getHttpEntityContent(response);
         httpGet.abort();
         return httpEntityContent;
@@ -122,14 +125,17 @@ public class HttpClientUtil {
     public static String doPost(String url, Map<String, String> paramMap) throws ClientProtocolException, IOException {
         log.info("post请求，请求的url = {}", url);
         log.info("post请求，请求参数 paramMap = {}",paramMap);
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost(url);
-        List<NameValuePair> formParams = setHttpParams(paramMap);
-        UrlEncodedFormEntity param = new UrlEncodedFormEntity(formParams, "UTF-8");
-        //通过setEntity()设置参数给post
-        httpPost.setEntity(param);
-        //利用httpClient的execute()方法发送请求并且获取返回参数
-        CloseableHttpResponse response = httpClient.execute(httpPost);
+        HttpPost httpPost;
+        CloseableHttpResponse response;
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            httpPost = new HttpPost(url);
+            List<NameValuePair> formParams = setHttpParams(paramMap);
+            UrlEncodedFormEntity param = new UrlEncodedFormEntity(formParams, "UTF-8");
+            //通过setEntity()设置参数给post
+            httpPost.setEntity(param);
+            //利用httpClient的execute()方法发送请求并且获取返回参数
+            response = httpClient.execute(httpPost);
+        }
         String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();
         return httpEntityContent;
@@ -157,14 +163,17 @@ public class HttpClientUtil {
     public static String doPostWithJson(String url, String json) throws IOException {
         log.info("请求的url = {}", url);
         log.info("请求json参数 json = {}", json);
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost(url);
-        StringEntity requestEntity = new StringEntity(json, "utf-8");
-        requestEntity.setContentEncoding("UTF-8");
-        httpPost.setHeader("Content-type", "application/json");
-        httpPost.setEntity(requestEntity);
-        //利用httpClient的execute()方法发送请求并且获取返回参数
-        CloseableHttpResponse response = httpClient.execute(httpPost);
+        HttpPost httpPost;
+        CloseableHttpResponse response;
+        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            httpPost = new HttpPost(url);
+            StringEntity requestEntity = new StringEntity(json, "utf-8");
+            requestEntity.setContentEncoding("UTF-8");
+            httpPost.setHeader("Content-type", "application/json");
+            httpPost.setEntity(requestEntity);
+            //利用httpClient的execute()方法发送请求并且获取返回参数
+            response = httpClient.execute(httpPost);
+        }
         String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();
         return httpEntityContent;
@@ -199,6 +208,7 @@ public class HttpClientUtil {
         InputStream is = null;
         BufferedReader br = null;
         try {
+
             //通过HttpResponse 的getEntity()方法获取返回信息
             HttpEntity entity = response.getEntity();
             if (entity != null) {

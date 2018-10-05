@@ -1,0 +1,15 @@
+server:
+  port: 9988
+spring:
+  application:
+    name: ace-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    consul:
+      port: 8500
+      host: 127.0.0.1
+      discovery:
+        prefer-ip-address: true

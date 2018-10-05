@@ -43,25 +43,29 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
-		<!--当当定时任务 -->
+		<!--当当定时任务 对应的curator-framework2.10.0 curator-client2.10.0 curator-recipes2.10.0版本-->
+		<!-- 父项目引入了springcloud 使用的curator-framework4.0.1 curator-recipes4.0.1-->
 		<dependency>
 			<groupId>com.dangdang</groupId>
-			<artifactId>elastic-job-lite-core</artifactId>
+			<artifactId>elastic-job-lite-spring</artifactId>
+			<version>2.1.5</version>
+		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.apache.curator</groupId>-->
+		<!--<artifactId>curator-client</artifactId>-->
+		<!--<version>2.10.0</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-framework</artifactId>
+			<version>2.10.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.dangdang</groupId>
-			<artifactId>elastic-job-lite-lifecycle</artifactId>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-recipes</artifactId>
+			<version>2.10.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.dangdang</groupId>
-			<artifactId>elastic-job-spring</artifactId>
-			<!--<exclusions>-->
-				<!--<exclusion>-->
-					<!--<groupId>com.dangdang</groupId>-->
-					<!--<artifactId>elastic-job-core</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
-		</dependency>
+
 	</dependencies>
 
 	<build>
