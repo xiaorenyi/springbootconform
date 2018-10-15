@@ -24,7 +24,7 @@ public class HelloController {
     private JobProperties jobProperties;
 
     @GetMapping("/hello/{msg}")
-    public String hello(@PathVariable String msg){
+    public String hello(@PathVariable String msg) {
         log.info("msg");
         System.out.println(zookeeperConfig);
         System.out.println(jobProperties);

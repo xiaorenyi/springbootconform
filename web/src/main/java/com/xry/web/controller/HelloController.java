@@ -22,9 +22,9 @@ public class HelloController {
     private CityRepo cityRepo;
 
     @GetMapping("/hello/{msg}")
-    public String sayHello(@PathVariable String msg){
-        log.info("welcome = {}",msg);
+    public String sayHello(@PathVariable String msg) {
+        log.info("welcome = {}", msg);
         List<CityDO> cityDOList = cityRepo.findAll();
-        return "welcome "+msg + cityDOList.toString();
+        return "welcome " + msg + cityDOList.toString();
     }
 }

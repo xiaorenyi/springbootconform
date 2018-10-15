@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.xry</groupId>
-		<artifactId>conform-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>com.xry</groupId>
+        <artifactId>conform-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>conform-job</artifactId>
-	<name>job</name>
+    <artifactId>conform-job</artifactId>
+    <name>job</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<!--consul or eureka做服务，服务之间用feign调用 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
+        <!--consul or eureka做服务，服务之间用feign调用 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
-		</dependency>
-		<!-- kafka消息队列 -->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.kafka</groupId>-->
-			<!--<artifactId>spring-kafka</artifactId>-->
-		<!--</dependency>-->
-		<!-- rabbitmq 消息队列-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+        <!-- kafka消息队列 -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.kafka</groupId>-->
+        <!--<artifactId>spring-kafka</artifactId>-->
+        <!--</dependency>-->
+        <!-- rabbitmq 消息队列-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
 
-		<!--当当定时任务 对应的curator-framework2.10.0 curator-client2.10.0 curator-recipes2.10.0版本-->
-		<!-- 父项目引入了springcloud 使用的curator-framework4.0.1 curator-recipes4.0.1-->
-		<dependency>
-			<groupId>com.dangdang</groupId>
-			<artifactId>elastic-job-lite-spring</artifactId>
-			<version>2.1.5</version>
-		</dependency>
-		<!--<dependency>-->
-		<!--<groupId>org.apache.curator</groupId>-->
-		<!--<artifactId>curator-client</artifactId>-->
-		<!--<version>2.10.0</version>-->
-		<!--</dependency>-->
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-framework</artifactId>
-			<version>2.10.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<version>2.10.0</version>
-		</dependency>
+        <!--当当定时任务 对应的curator-framework2.10.0 curator-client2.10.0 curator-recipes2.10.0版本-->
+        <!-- 父项目引入了springcloud 使用的curator-framework4.0.1 curator-recipes4.0.1-->
+        <dependency>
+            <groupId>com.dangdang</groupId>
+            <artifactId>elastic-job-lite-spring</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.curator</groupId>-->
+        <!--<artifactId>curator-client</artifactId>-->
+        <!--<version>2.10.0</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>2.10.0</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

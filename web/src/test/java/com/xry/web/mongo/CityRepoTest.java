@@ -20,12 +20,12 @@ public class CityRepoTest {
     private CityRepo cityRepo;
 
     @Test
-    public void saveTest(){
+    public void saveTest() {
         CityDO cityDO = new CityDO();
         cityDO.setName("阳江123");
         cityDO.setSpecialty("阳江十八子123");
         CityDO res = cityRepo.save(cityDO);
-        log.info("save city res = {}",res);
+        log.info("save city res = {}", res);
     }
 
 }

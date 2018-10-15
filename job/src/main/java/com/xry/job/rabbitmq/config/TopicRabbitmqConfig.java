@@ -61,6 +61,7 @@ public class TopicRabbitmqConfig {
 
     /**
      * queueMatch 根据方法名queueMatch那对应的bean
+     *
      * @return
      */
     @Bean

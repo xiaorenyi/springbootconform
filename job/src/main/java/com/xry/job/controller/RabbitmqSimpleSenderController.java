@@ -20,9 +20,9 @@ public class RabbitmqSimpleSenderController {
     @GetMapping("/rabbit/simple/hello/{msg}")
     public String send(@PathVariable String msg) {
         System.out.println("hello : " + msg);
-        for (int i = 0; i <= 20;i++){
+        for (int i = 0; i <= 20; i++) {
             MsgBean msgBean = new MsgBean();
-            msgBean.setId(i+"");
+            msgBean.setId(i + "");
             msgBean.setMsg(msg);
             this.rabbitTemplate.convertAndSend("hello", msgBean);
         }

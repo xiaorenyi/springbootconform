@@ -1,12 +1,12 @@
 package com.xry.web.java;
 
 
-
 import java.util.Collections;
 import java.util.Random;
 
 /**
  * 重试机制测试
+ *
  * @author yuqinggen
  * @create 2018-09-11 15:29
  */

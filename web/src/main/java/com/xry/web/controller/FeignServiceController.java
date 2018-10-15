@@ -13,7 +13,7 @@ public class FeignServiceController {
 
 
     @GetMapping("/pullData")
-    public ResponseMO getData(){
+    public ResponseMO getData() {
         ResponseMO responseMO = new ResponseMO();
         responseMO.setMsg("pull data success");
         return responseMO;

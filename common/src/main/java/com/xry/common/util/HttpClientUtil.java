@@ -77,27 +77,29 @@ public class HttpClientUtil {
 
         HttpGet httpGet;
         CloseableHttpResponse response;
+        String httpEntityContent
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             httpGet = new HttpGet();
             List<NameValuePair> formParams = setHttpParams(paramMap);
             String param = URLEncodedUtils.format(formParams, "UTF-8");
             httpGet.setURI(URI.create(url + "?" + param));
             response = httpClient.execute(httpGet);
+            httpEntityContent = getHttpEntityContent(response);
         }
-        String httpEntityContent = getHttpEntityContent(response);
         httpGet.abort();
         return httpEntityContent;
     }
 
     /**
      * 无参post请求
+     *
      * @param url
      * @return
      * @throws ClientProtocolException
      * @throws IOException
      */
     public static String doPost(String url) throws ClientProtocolException, IOException {
-        return doPost(url,new HashMap<>());
+        return doPost(url, new HashMap<>());
     }
 
     /**
@@ -124,9 +126,10 @@ public class HttpClientUtil {
      */
     public static String doPost(String url, Map<String, String> paramMap) throws ClientProtocolException, IOException {
         log.info("post请求，请求的url = {}", url);
-        log.info("post请求，请求参数 paramMap = {}",paramMap);
+        log.info("post请求，请求参数 paramMap = {}", paramMap);
         HttpPost httpPost;
         CloseableHttpResponse response;
+        String httpEntityContent;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             httpPost = new HttpPost(url);
             List<NameValuePair> formParams = setHttpParams(paramMap);
@@ -135,8 +138,8 @@ public class HttpClientUtil {
             httpPost.setEntity(param);
             //利用httpClient的execute()方法发送请求并且获取返回参数
             response = httpClient.execute(httpPost);
+            httpEntityContent = getHttpEntityContent(response);
         }
-        String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();
         return httpEntityContent;
     }
@@ -165,6 +168,7 @@ public class HttpClientUtil {
         log.info("请求json参数 json = {}", json);
         HttpPost httpPost;
         CloseableHttpResponse response;
+        String httpEntityContent;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             httpPost = new HttpPost(url);
             StringEntity requestEntity = new StringEntity(json, "utf-8");
@@ -173,8 +177,8 @@ public class HttpClientUtil {
             httpPost.setEntity(requestEntity);
             //利用httpClient的execute()方法发送请求并且获取返回参数
             response = httpClient.execute(httpPost);
+            httpEntityContent = getHttpEntityContent(response);
         }
-        String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();
         return httpEntityContent;
     }
@@ -224,7 +228,7 @@ public class HttpClientUtil {
                 return sb.toString();
             }
         } finally {
-            IOUtils.close(br,is,response);
+            IOUtils.close(br, is, response);
         }
         return "";
     }

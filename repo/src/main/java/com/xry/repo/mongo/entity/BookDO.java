@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document(collection = "book")
-public class BookDO extends BaseDO{
+public class BookDO extends BaseDO {
 
     private String name;
 

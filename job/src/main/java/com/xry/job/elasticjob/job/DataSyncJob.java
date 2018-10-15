@@ -14,8 +14,8 @@ public class DataSyncJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
 
-        for (int i = 0;i< 100; i++){
-            log.info("数据同步 i = {}",i);
+        for (int i = 0; i < 100; i++) {
+            log.info("数据同步 i = {}", i);
         }
 
     }

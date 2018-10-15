@@ -28,7 +28,7 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class ElasticJobServiceImpl  implements ElasticJobService {
+public class ElasticJobServiceImpl implements ElasticJobService {
 
     @Autowired
     private CoordinatorRegistryCenter registryCenter;

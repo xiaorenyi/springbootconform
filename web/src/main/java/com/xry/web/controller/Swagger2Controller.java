@@ -17,7 +17,7 @@ public class Swagger2Controller {
 
     @GetMapping("/swagger")
     @ApiOperation("swagger2 test")
-    public String swagger(@RequestBody RequestMO requestMO){
+    public String swagger(@RequestBody RequestMO requestMO) {
         return "swagger 文档";
     }
 }

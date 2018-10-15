@@ -22,10 +22,10 @@ public class UserMapperTest {
     private UserMapper userMapper;
 
     @Test
-    public void findAllTest(){
-        List<UserDO> userDOList =  userMapper.findAll();
-        for (UserDO userDO : userDOList){
-            log.info("user = {}",userDO);
+    public void findAllTest() {
+        List<UserDO> userDOList = userMapper.findAll();
+        for (UserDO userDO : userDOList) {
+            log.info("user = {}", userDO);
         }
     }
 

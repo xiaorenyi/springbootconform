@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * 任务分配job
- *
  */
 @Component
 @Slf4j

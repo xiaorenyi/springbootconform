@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
-    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
-    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
     <!--application.yml 传递参数，不能使用logback 自带的<property>标签 -->
     <springProperty scope="context" name="app_name" source="spring.application.name"/>
     <springProperty scope="context" name="log_dir" source="logging.path"/>
 
-    <property name="CONSOLE_LOG_PATTERN" value="[${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint}] [%clr(${LOG_LEVEL_PATTERN:-%5p})] [%clr(%X{traceId}){red}] %clr([%15.15t]){faint} [%clr(%-40.40logger{39}){cyan}] %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
-    <property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} %line - %msg%n"/>
+    <property name="CONSOLE_LOG_PATTERN"
+              value="[${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint}] [%clr(${LOG_LEVEL_PATTERN:-%5p})] [%clr(%X{traceId}){red}] %clr([%15.15t]){faint} [%clr(%-40.40logger{39}){cyan}] %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+    <property name="FILE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} %line - %msg%n"/>
 
     <contextName>${app_name}</contextName>
 

@@ -19,13 +19,13 @@ public class BookRepoTest {
     private BookRepo bookRepo;
 
     @Test
-    public void saveTest(){
+    public void saveTest() {
         BookDO bookDO = new BookDO();
         bookDO.setAuthor("周树明13");
         bookDO.setName("java虚拟机13");
         bookDO.setPrice(29.8);
 
         BookDO res = bookRepo.save(bookDO);
-        log.info("save book res = {}",res);
+        log.info("save book res = {}", res);
     }
 }

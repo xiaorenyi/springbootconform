@@ -18,7 +18,7 @@ public class FeignCallController {
     private FeignCallClient feignCallClient;
 
     @GetMapping("/feign")
-    public ResponseMO feignCall(){
+    public ResponseMO feignCall() {
 
         return feignCallClient.pullData();
     }
