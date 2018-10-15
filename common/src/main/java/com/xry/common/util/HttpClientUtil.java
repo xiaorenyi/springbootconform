@@ -77,7 +77,7 @@ public class HttpClientUtil {
 
         HttpGet httpGet;
         CloseableHttpResponse response;
-        String httpEntityContent
+        String httpEntityContent;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             httpGet = new HttpGet();
             List<NameValuePair> formParams = setHttpParams(paramMap);
