@@ -14,6 +14,7 @@
         <module>repo</module>
         <module>common</module>
         <module>gateway</module>
+        <module>permission</module>
     </modules>
 
     <parent>
