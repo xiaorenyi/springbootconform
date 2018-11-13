@@ -18,19 +18,16 @@ public class SecurityConfig {
 
     @Bean
     public PermissionPointCutAdvisor permissionPointCutAdvisor() {
-        System.out.println("permissionPointCutAdvisor");
         return new PermissionPointCutAdvisor(permissionAdvice());
     }
 
     @Bean
     public PermissionAdvice permissionAdvice() {
-        System.out.println("permissionAdvice");
         return new PermissionAdvice(permissionJudge(), TOKEN_HEAD);
     }
 
     @Bean
     public PermissionJudgeImpl permissionJudge() {
-        System.out.println("permissionJudge");
         return new PermissionJudgeImpl();
     }
 }
