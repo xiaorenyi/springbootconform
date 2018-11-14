@@ -14,14 +14,12 @@ public class AopPermissionController {
     @GetMapping("/aopPermissionAdd")
     @AopPermission(permissions = "add")
     public String permissionAdd(){
-
         return "aopPermissionAdd";
     }
 
     @GetMapping("/aopPermissionDel")
     @AopPermission(permissions = "del")
     public String permissionDel(){
-
         return "aopPermissionDel";
     }
 
