@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: permission
+logging:
+  path: logs/
+  file: logs/${spring.application.name}.log

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/permission.log}"/>
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <property name="LOG_PATTERN"
+              value="[${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint}] [%clr(${LOG_LEVEL_PATTERN:-%5p})] [%clr(%X{traceId}){red}] %clr([%15.15t]){faint} [%clr(%-40.40logger{39}){cyan}] %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"><!-- rollover daily -->
+            <FileNamePattern>${LOG_FILE}-log-%d{yyyy-MM-dd}.%i.zip</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>500MB</maxFileSize><!-- or whenever the file size reaches 5MB -->
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- <maxHistory></maxHistory> -->
+        </rollingPolicy>
+
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!--自定义包日志级别-->
+    <logger name="com.fujfu" level="DEBUG"/>
+    <logger name="org.springframework.data.mongodb.core" level="DEBUG"/>
+    <logger name="org.springframework.data.redis.clients" level="DEBUG"/>
+    <logger name="org.apache.catalina.startup.DigesterFactory" level="INFO"/>
+    <logger name="org.apache.catalina.util.LifecycleBase" level="INFO"/>
+    <logger name="org.apache.tomcat.util.net.NioSelectorPool" level="INFO"/>
+    <logger name="org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration" level="INFO"/>
+
+
+    <jmxConfigurator/>
+</configuration>
