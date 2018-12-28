@@ -21,4 +21,11 @@ public class TraceIdTestController {
         log.info("trace id = {}",TraceIdContext.getCurrentTraceId());
         return TraceIdContext.getCurrentTraceId();
     }
+
+    @GetMapping("/addTraceHead")
+    public String addTraceHead(){
+        log.info("current thread name = {}",Thread.currentThread().getName());
+        log.info("current thread id = {}",Thread.currentThread().getId());
+        return "addTraceHead";
+    }
 }
