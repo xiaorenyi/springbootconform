@@ -1,6 +1,7 @@
 package com.xry.web.mongo.muliconfig;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.xry.web.mongo.muliconfig.property.BaseMongoProperties;
@@ -50,10 +51,8 @@ public class MultipleMongoConfig {
 
     private MongoDbFactory builtMongoDbFactory(BaseMongoProperties mongo) {
         ServerAddress address = new ServerAddress(mongo.getHost(), mongo.getPort());
-        List<MongoCredential> credentialList = new ArrayList<MongoCredential>();
         MongoCredential credential = MongoCredential.createCredential(mongo.getUsername(), mongo.getDatabase(), mongo.getPassword().toCharArray());
-        credentialList.add(credential);
-        MongoClient mongoClient = new MongoClient(address, credentialList);
+        MongoClient mongoClient = new MongoClient(address, credential, MongoClientOptions.builder().build());
         return new SimpleMongoDbFactory(mongoClient, mongo.getDatabase());
     }
 }
