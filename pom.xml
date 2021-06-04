@@ -34,7 +34,7 @@
         <fastjson.version>1.2.39</fastjson.version>
         <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
         <mybatis.version>1.3.2</mybatis.version>
-        <httpclient.version>4.5.5</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <elastic.job.version>2.1.5</elastic.job.version>
         <elastic.job.spring.version>1.0.1</elastic.job.spring.version>
     </properties>
